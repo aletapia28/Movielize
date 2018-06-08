@@ -1,0 +1,5 @@
+-Generar el hasMap para meter los valores
+-Crear la busqueda
+-Ver donde se almacena la busqueda
+
+-verificar que el read.js sirva
