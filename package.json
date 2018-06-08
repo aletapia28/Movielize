@@ -1,0 +1,23 @@
+{
+  "name": "Movielize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prueba.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aletapia28/Movielize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aletapia28/Movielize/issues"
+  },
+  "homepage": "https://github.com/aletapia28/Movielize#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
