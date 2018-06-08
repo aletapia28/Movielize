@@ -1,23 +1,31 @@
- const a = require ('express');
+ const express = require ('express');
 
- const app = a();
+ const app = express();
 
-
-
-app.use (require('./routes'));
-
- app.listen(8080,function(){
-     console.log('servidor funcionando');
- });
 
 
  var years = [];
  for (var year = 1900; year < 2017; year++)
    years.push(year);
  
-app.listen(8082,function(){
-    console.log('Cantidad de annos'+years);
+app.listen(8080,function(){
+    console.log('Cantidad de annos');
 });
 
 app.use (require('./routes'));
+
+// Read Movies.json
+var fs = require("fs");
+var filename = "./movies.json";
+
+fs.readFile(filename, 'utf-8', (err,data) =>
+{
+    if(err) {
+        console.log('error: ', err);
+      } else {
+        console.log(data);
+      } 
+});
+
+
 
