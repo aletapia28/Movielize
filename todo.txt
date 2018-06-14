@@ -1,5 +1,3 @@
--Generar el hasMap para meter los valores
--Crear la busqueda
--Ver donde se almacena la busqueda
 
--verificar que el read.js sirva
+
+TODO: "Ver como se envian los datos";

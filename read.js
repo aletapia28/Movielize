@@ -1,28 +1,5 @@
-/*
-var loadFile = function(event) {
-    // Init
-    var input = event.target;
-    var reader = new FileReader();
-    
-    // Read the filend
-    reader.readAsText(input.files[0]);
-    
-    // Invoked when file is loading. 
-    reader.onload = function(){
-    
-        // parse file to JSON object
-        var jsonObject = reader.result;
-        var json = JSON.parse(jsonObject);
-  
-
-    
-    };
-    };
-
-*/
-
-
 var fs = require("fs");
+
 function ReadToArray (filename) {
     var data = JSON.parse(fs.readFileSync(filename));
     //console.log(data);
@@ -44,4 +21,33 @@ function loadFile(filepath){
 }
 
 
+function GlobalSearch(obj, title ,year, director,cast,genre,notes ){
+    var found =[];
+
+    for (var i in obj) {
+
+  if (obj[i].title == title || obj[i].year == year 
+    || obj[i].director == director || obj[i].cast == cast 
+    || obj[i].genre == genre || obj[i].notes == notes ){
+
+        found.push(obj[i]);
+        console.log(obj[i]);
+    }
+
+    
+    
+    
+
+//return found;
+}
+}
+
+
+
+
+
+
+
 exports.ReadToArray = ReadToArray;
+module.exports.GlobalSearch = GlobalSearch;
+

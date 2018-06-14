@@ -18,59 +18,20 @@ app.listen(PORT_NUMBER,function(){
 });*/
 
 app.use (require('./routes'));
-
-// Read Movies.json
-var fs = require("fs");
-/*
-fs.readFile(filename, 'utf-8', (err,data) =>
-{
-    if(err) {
-        console.log('error: ', err);
-      } else {
-        console.log("data is rigth");
-      } 
-
-});
-*/
-
-
-
-
-
-
-
 const read= require('./read');
+"**prueba/*.js"
+
+var datafile = read.ReadToArray(filename);
+ 
+var title = "";
+var year= 2015 - 2016 ; TODO: "Añadir la busqueda por rango"
+ var director= "";
+ var cast= "";
+ var genre= "";
+ var notes= "";
 
 
-var datafile= read.ReadToArray(filename);
-
-
-var objects=[];
-for (var i in datafile) {
-
-  if (datafile[i].title == " .45"){
-    console.log(datafile[i].year+datafile[i].title);
-
-  }
-      
-
-}
-//var js=JSON.parse(datafile);
-//console.log(SearchMovie(datafile,"director","Jeremy Leven"));
-//console.log(datafile[1]);
-
-//console.log(datafile.key);
-
-
-/*
- var map = new Map();
- map.set("1",fs.data);
-
- map.get("1");
- console.log( map.get("1"));*/
-
-
-
+read.GlobalSearch(datafile,title ,year, director,cast,genre,notes);
 
 
 
