@@ -33,8 +33,7 @@ function GlobalSearch(obj, title ,year, director,cast,genre,notes ){
         found.push(obj[i]);
         console.log(obj[i]);
     }
-
-    
+   
     
     
 
