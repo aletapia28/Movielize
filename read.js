@@ -1,3 +1,4 @@
+/*
 var loadFile = function(event) {
     // Init
     var input = event.target;
@@ -12,12 +13,35 @@ var loadFile = function(event) {
         // parse file to JSON object
         var jsonObject = reader.result;
         var json = JSON.parse(jsonObject);
+  
 
-    //     jsonlayer = L.geoJson(json, {
-    // onEachFeature: function (feature, layer) {
-    //   layer.bindPopup(feature.properties.name);
-    // }).addTo(map);
-    //     console.log(jsonObject);
     
     };
     };
+
+*/
+
+
+var fs = require("fs");
+function ReadToArray (filename) {
+    var data = JSON.parse(fs.readFileSync(filename));
+    //console.log(data);
+    return data;
+}
+
+function loadFile(filepath){
+  var arrLines = [];
+  fs.stat(filepath, function(err, stat) {
+      if(err == null) {
+          arrLines = fsReadFileSynchToArray(filepath);
+      } else if(err.code == 'ENOENT') {
+          console.log('error: loading file ' + filepath + ' not found');
+      } else {
+          console.log('error: loading file', err.code);
+      }
+  });
+  return arrLines;
+}
+
+
+exports.ReadToArray = ReadToArray;
