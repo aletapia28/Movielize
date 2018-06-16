@@ -1,9 +1,23 @@
  const express = require ('express');
  const app = express();
+ var http = require ('http');
+ var fs = require('fs');
+var bodyParser = require('body-parser');
 
  //Variables
- var PORT_NUMBER = 8080;
+ //var PORT_NUMBER = 8080;
  var filename = "./movies.json";
+
+ var server = http.createServer(function(req,res){
+  console.log('Solicutud por ' + req.url);
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  var myReadStream = fs.createReadStream(__dirname + '/client.html','utf-8' );
+  myReadStream.pipe(res);
+
+});
+
+server.listen(8080, 'localhost');
+console.log("Servidor Iniciado...");
 
 
 
@@ -13,8 +27,8 @@ app.listen(PORT_NUMBER,function(){
     console.log('Cantidad de annos');
 });*/
 
-app.use (require('./routes'));
-const read= require('./read');
+// app.use (require('./routes'));
+// const read= require('./read');
 "**prueba/*.js"
 
 // app.get('/myform', function(req, res){ 
@@ -24,7 +38,18 @@ const read= require('./read');
 // });
 //app.listen(3000)
 
-var datafile = read.ReadToArray(filename);
+//var datafile = read.ReadToArray(filename);
+
+
+
+
+
+
+
+
+
+
+
  
 var title ="How to Make a Fat Wife Out of Two Lean Ones";
 var year ="3"; 
@@ -36,27 +61,9 @@ var year ="3";
  //TODO: "Añadir la busqueda por rango"
 
 //read.GlobalSearch(datafile,title ,year, director,cast,genre,notes)
-read.searchTitle(datafile,title)
+//read.searchTitle(datafile,title)
 
 TODO: 'Ver como se envian los datos'
 
 TODO: "Generar el cuadro de texto predeterminado"
 
-/*
-var years = [];
-for (var year = 1900; year < 2017; year++)
-  years.push(year);
-
-var async = require('async');
-
-async.mapSeries(years, scrapeMoviesForYear, function(err, results) {
-    var movies = [];
-    results.forEach(function(movies_for_year) {
-      movies = movies.concat(movies_for_year);
-    });
-
-var complete_movie_list = []; // JSON.parse(fs.readFileSync('movies.json')); // read in the JSON file if you want to append to it
-complete_movie_list = complete_movie_list.concat(movies);
-fs.writeFileSync('movies.json', JSON.stringify(complete_movie_list), {encoding: 'utf8'});
-});
-*/

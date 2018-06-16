@@ -17,6 +17,11 @@ router.get('/years',(req,res)=>{
     }
 });
 
+router.get('/search',(req,res)=>{
+    {
+        res.render( '/client.hmtl' );
+    }
+});
 
 module.exports= router;
 

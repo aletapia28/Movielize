@@ -3,26 +3,38 @@
 <html>
 <title>Movielize</title>
 
-<!-- <body background= "https://omicrono.elespanol.com/wp-content/uploads/2017/01/series-y-peliculas.jpg"> -->
+<style>   
+    body{ background: skyblue; font-family: Verdana ; color:white; padding: 30px;}
+    h1{font-size: 48px; text-transform:uppercase; text-align: center;}
+    h2{text-align: center}
+    form{width: 400;max-width: 100%; padding: 20px; margin: 20px auto; }
+    input, label{ display:block; margin: 10px 0; padding: 5px; width: 50%; }
+
+</style>
 
 <body>
-    <h1 style="color: red;">Movielize</h1>
-    <h2>Inserte en formato Json los criterios de b&uacute;squeda  
+    <h1>Movielize</h1>
+    <h2>Inserte los  criterios de b&uacute;squeda  
     </h2>
-    <form>
-        <label>Datos
-            
-        </label>
-    </form>
 
-    <!-- <form> 
-        <input type="search">
-    </form> -->
 
-    <form action="/myform" method="GET">
-        <input type="text" name="mytext" required/>
+    <form id= "Busqueda" method ="POST" action= "/Busqueda">
+        <label for="title"> Titulo de la pelicula </label>
+        <input type="text" title = "title" ></label>
+        <label for="year"> Anno </label>
+        <input type="text" year = "year" ></input>
+        <label for="director"> Director</label>
+        <input type="text" director = "director" ></input>
+        <label for="cast"> Cast </label>
+        <input type="text" cast = "cast" ></input>
+        <label for="genres"> Genero</label>
+        <input type="text" genre = "genre" ></input>
+        <label for="notes"> Notas </label>
+        <input type="text" notes = "notes" ></input>
         <input type="submit" value="submit"/>
+
     </form>
+
 
         
        <! <input type="button" name="button1" value="Enviar"  onclick="pulsar()">
